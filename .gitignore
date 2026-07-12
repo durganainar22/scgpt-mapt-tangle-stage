@@ -1,0 +1,17 @@
+# Large data files
+*.h5
+*.h5ad
+*.npy
+*.pt
+*.gz
+
+# Pretrained model
+scgpt_human_model/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+
+# Logs
+*.log
