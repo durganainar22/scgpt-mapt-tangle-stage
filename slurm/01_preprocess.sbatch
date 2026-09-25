@@ -16,7 +16,7 @@ cd "$SCGPT_PROJECT_DIR"
 mkdir -p logs executed
 
 # --- environment (edit if your setup differs) ---
-module load anaconda3/2022.05 2>/dev/null || true
+module load anaconda3/2024.06 2>/dev/null || true
 source "$(conda info --base)/etc/profile.d/conda.sh"
 unset PYTHONPATH
 conda activate scgpt_mapt

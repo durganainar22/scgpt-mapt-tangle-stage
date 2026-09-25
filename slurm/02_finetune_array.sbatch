@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=scgpt_ft
 #SBATCH --partition=gpu
-#SBATCH --gres=gpu:v100-sxm2:1
+#SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=48G
 #SBATCH --time=08:00:00
@@ -28,7 +28,7 @@ export FOLD="${SLURM_ARRAY_TASK_ID:-0}"
 export SEED="${SEED:-42}"
 
 # --- environment (edit if your setup differs) ---
-module load anaconda3/2022.05 2>/dev/null || true
+module load anaconda3/2024.06 2>/dev/null || true
 source "$(conda info --base)/etc/profile.d/conda.sh"
 unset PYTHONPATH
 conda activate scgpt_mapt
