@@ -70,13 +70,15 @@ out = {
                             'std': summary.loc[model, (c, 'std')]}
                         for c in cols}
                 for model in summary.index},
-    'per_run': df.to_dict(orient='records'),
+    # NaN is not valid JSON (baselines have no seed) -> null; seeds as ints
+    'per_run': [{k: (None if pd.isna(v) else int(v) if k == 'seed' else v) for k, v in r.items()}
+                for r in df.to_dict(orient='records')],
 }
-with open('results_summary.json', 'w') as f:
+with open('results_summary.json', 'w', encoding='utf-8') as f:
     json.dump(out, f, indent=2, default=lambda x: None if pd.isna(x) else float(x))
 
 os.makedirs('results', exist_ok=True)
-with open('results/summary.md', 'w') as f:
+with open('results/summary.md', 'w', encoding='utf-8') as f:
     f.write('| Model | ' + ' | '.join(METRICS) + ' | runs |\n')
     f.write('|' + '---|' * (len(METRICS) + 2) + '\n')
     for model, r in fmt.iterrows():

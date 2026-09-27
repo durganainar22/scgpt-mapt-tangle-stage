@@ -5,18 +5,18 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=48G
 #SBATCH --time=08:00:00
-#SBATCH --array=0-4
+#SBATCH --array=0-2
 #SBATCH --output=logs/%x_%A_%a.out
 #SBATCH --error=logs/%x_%A_%a.err
 
 # Step 2 (GPU): one fine-tuning run per donor fold (array index = test fold).
 #
 # Test ONE fold first:        sbatch --array=0 slurm/02_finetune_array.sbatch
-# Then the rest:              sbatch --array=1-4 slurm/02_finetune_array.sbatch
+# Then the rest:              sbatch --array=1-2 slurm/02_finetune_array.sbatch
 # Extra seeds (optional):     SEED=7 sbatch slurm/02_finetune_array.sbatch
 #
 # The preprocessing notebook prints how many donor folds are possible
-# (n_splits = min(5, fewest donors in any stage)). If it is < 5, shrink --array.
+# (n_splits = min(5, fewest donors in any stage)); GSE174367 gives 3 -> --array=0-2.
 # Knobs: MAX_LEN (default 513), N_EPOCHS (15), BATCH_SIZE (32), LR (1e-4).
 
 set -euo pipefail

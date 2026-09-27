@@ -19,12 +19,13 @@ Neurofibrillary tangles of hyperphosphorylated MAPT (tau) are a defining patholo
     ├── metrics_utils.py            # Imbalance-aware metrics (balanced acc, macro-F1, donor-level acc)
     ├── baselines.py                # Majority-class and PCA + logistic regression baselines (CPU)
     ├── aggregate_results.py        # Mean ± SD across folds -> results_summary.json
+    ├── results_summary.json        # All metrics, summary + per run
     ├── slurm/
     │   ├── 01_preprocess.sbatch    # CPU: preprocessing notebook + baselines
     │   └── 02_finetune_array.sbatch# GPU: one fine-tuning run per donor fold
     ├── results/                    # per-fold JSON results + summary.md
     ├── executed/                   # executed notebooks (outputs), one per run
-    ├── figures/
+    ├── figures/                    # MAPT pseudobulk, baseline UMAP, per-run confusion matrices + test-donor UMAPs
     └── README.md
 
 Not included due to size: raw GEO files, `neurons_hvg_preprocessed.h5ad`, `scgpt_human_model/`, checkpoints.
@@ -35,9 +36,17 @@ Not included due to size: raw GEO files, `neurons_hvg_preprocessed.h5ad`, `scgpt
 
 Morabito et al. 2021, *Nature Genetics* 53:1143–1155 — GEO **GSE174367**
 
-- 61,472 nuclei from post-mortem human prefrontal cortex; ~12k excitatory + inhibitory neurons used here
-- Tangle stages present: 1, 2, 5, 6 (stages 3–4 absent)
-- **Tangle stage is a donor-level label.** The number of independent samples is the number of donors (~20), not the number of cells. The preprocessing notebook prints donors per stage and checks stage vs diagnosis / batch confounding.
+- 61,472 nuclei from post-mortem human prefrontal cortex of 18 donors; 12,331 excitatory + inhibitory neurons used here (39–1,641 per donor)
+- "Tangle stage" is the donor's **Braak neurofibrillary tangle (NFT) stage** (Braak & Braak 1991). Stages present: 1, 2, 5, 6 (stages 3–4 absent)
+- **Tangle stage is a donor-level label.** The number of independent samples is the number of donors (18), not the number of cells.
+- **Stage is fully confounded with diagnosis:** every Stage 1–2 donor is a Control and every Stage 5–6 donor has AD. Sequencing batch is spread across stages (each stage has donors from 2–3 of the 3 batches).
+
+| Stage | Donors | Diagnosis | Donors per batch (1 / 2 / 3) |
+|---|---|---|---|
+| 1 | 3 | Control | 1 / 1 / 1 |
+| 2 | 4 | Control | 1 / 1 / 2 |
+| 5 | 3 | AD | 0 / 1 / 2 |
+| 6 | 8 | AD | 2 / 3 / 3 |
 
 ---
 
@@ -53,7 +62,7 @@ Morabito et al. 2021, *Nature Genetics* 53:1143–1155 — GEO **GSE174367**
 - PCA/UMAP computed on a scaled **copy**
 
 ### Evaluation design
-- **Donor-level cross-validation** (`splits.py`): donors are assigned to folds stratified by stage; `n_splits = min(5, fewest donors in any stage)`. For each fold: test = that fold, validation = next fold, training = the rest. No donor appears in more than one split (asserted).
+- **Donor-level cross-validation** (`splits.py`): donors are assigned to folds stratified by stage; `n_splits = min(5, fewest donors in any stage)`. For each fold: test = that fold, validation = next fold, training = the rest. No donor appears in more than one split (asserted). With 18 donors this gives 3 folds, so each run trains on **6 donors**, selects the checkpoint on 6 and tests on 6.
 - **Metrics** (`metrics_utils.py`): balanced accuracy and macro-F1 as headline numbers (Stage 6 is ~52% of cells, so plain accuracy rewards always predicting Stage 6), per-class recall, one-vs-rest AUC, and **donor-level accuracy** (mean predicted probabilities per test donor).
 - **Baselines on identical folds:** majority class; PCA (50) + logistic regression; linear probe on **frozen** pretrained scGPT embeddings.
 
@@ -79,11 +88,24 @@ Morabito et al. 2021, *Nature Genetics* 53:1143–1155 — GEO **GSE174367**
 
 Chance: balanced accuracy 0.25, AUC 0.50. Accuracy is inflated by the Stage 6 majority and is shown for reference only.
 
+**AD vs Control (post-hoc).** Because stage and diagnosis are confounded, the 4-class predictions were also collapsed to Control (Stages 1–2) vs AD (Stages 5–6), from the saved confusion matrices and donor-level predictions. No model was retrained for this.
+
+| Model | Balanced accuracy (cells) | Donor-level accuracy |
+|---|---|---|
+| Majority class | 0.500 ± 0.000 | 0.611 ± 0.096 |
+| PCA (50) + logistic regression | 0.495 ± 0.042 | 0.500 ± 0.289 |
+| Frozen scGPT embedding + LR | 0.440 ± 0.038 | 0.333 ± 0.149 |
+| Fine-tuned scGPT | 0.469 ± 0.054 | 0.583 ± 0.175 |
+
+**MAPT expression.** Donor pseudobulk MAPT (CPM) does not change with tangle stage (Kruskal–Wallis H = 1.44, p = 0.70; Spearman ρ = 0.03, p = 0.91; n = 18 donors; `figures/MAPT_by_tangle_stage.png`, `figures/MAPT_pseudobulk_by_donor.csv`). This is expected: tangles are hyperphosphorylated, aggregated tau protein, not higher MAPT mRNA.
+
+Per-run confusion matrices and test-donor UMAPs: `figures/confusion_matrix_fold*_seed*.png`, `figures/UMAP_test_donors_fold*_seed*.png`.
+
 **Interpretation**
-- In unseen donors, tangle stage is **not predictable** from neuronal transcriptomes in this dataset — not by fine-tuned scGPT, pretrained scGPT embeddings, or a linear model on PCA features. Fine-tuned scGPT is not better than always predicting the most common stage, even at the donor level.
+- In unseen donors, tangle stage is **not predictable** from neuronal transcriptomes in this dataset — not by fine-tuned scGPT, pretrained scGPT embeddings, or a linear model on PCA features. Fine-tuned scGPT is not better than always predicting the most common stage, even at the donor level. Even the coarser AD-vs-Control split (which stage fully determines here) is at chance.
 - Fine-tuning fits training donors quickly while loss on new (validation) donors stays much higher (e.g. fold 0, epoch 1: train 0.90 vs validation 3.31) — the expected signature of learning donor-specific features rather than a transferable pathology signal. Per-epoch curves are in the executed notebooks (`executed/`).
 - The v1 result was therefore an artefact of donor leakage (and inputs that did not match scGPT's pretraining). This is the main lesson of the project: with donor-level labels, the unit of generalisation is the donor, and the effective sample size here is 18.
-- A negative result at n = 18 donors does not show that no stage signal exists — only that it is not detectable/transferable at this sample size, with neurons only and 3 of 4 stages represented by 3–4 donors. Larger cohorts (e.g. SEA-AD, ROSMAP snRNA-seq), pseudobulk donor-level models, and ordinal or continuous pathology targets are the natural next steps.
+- A negative result at n = 18 donors (6 per training set) does not show that no stage signal exists — only that it is not detectable/transferable at this sample size, with neurons only and 3 of 4 stages represented by 3–4 donors. Larger cohorts (e.g. SEA-AD, ROSMAP snRNA-seq), pseudobulk donor-level models, and ordinal or continuous pathology targets are the natural next steps.
 
 ---
 
@@ -106,10 +128,10 @@ v1 biological interpretations ("Stage 5 is transitional", "Stage 1/6 confusion r
 
 ---
 
-## Environment Setup (Northeastern Discovery HPC)
+## Environment Setup (Northeastern Explorer HPC)
 
     srun --partition=gpu --gres=gpu:1 --cpus-per-task=4 --mem=32G --time=2:00:00 --pty bash
-    module load anaconda3/2022.05
+    module load anaconda3/2024.06
     conda create -n scgpt_mapt python=3.10 -y
     conda activate scgpt_mapt
     pip install "scgpt==0.2.2" "scanpy==1.9.8" "anndata==0.10.8" "torch==2.2.2" "torchtext==0.17.2" \
@@ -134,9 +156,10 @@ From the project directory (set `SCGPT_PROJECT_DIR` if data lives elsewhere):
     # 1. CPU: preprocessing + baselines  (check the log for donors per stage and n_splits)
     sbatch slurm/01_preprocess.sbatch
 
-    # 2. GPU: test one fold first, then the rest
+    # 2. GPU: test one fold first, then the rest (18 donors -> 3 folds: 0-2), then a second seed
     sbatch --array=0 slurm/02_finetune_array.sbatch
-    sbatch --array=1-4 slurm/02_finetune_array.sbatch
+    sbatch --array=1-2 slurm/02_finetune_array.sbatch
+    SEED=7 sbatch --array=0-2 slurm/02_finetune_array.sbatch
 
     # 3. Combine
     python aggregate_results.py
@@ -147,15 +170,18 @@ Executed notebooks (with outputs) are written to `executed/`.
 
 ## Limitations
 
-- ~20 donors: per-stage conclusions rest on very few individuals; fold-to-fold variance is expected to be large
-- Stages 3–4 absent; stage may be partly confounded with diagnosis and batch (reported in the preprocessing notebook)
+- 18 donors (6 per training set): per-stage conclusions rest on very few individuals; fold-to-fold variance is large
+- Stages 3–4 absent; stage is fully confounded with diagnosis (Stages 1–2 Control, 5–6 AD), so stage and AD effects cannot be separated
+- Very uneven neurons per donor (39–1,641); cell-level metrics weight donors unequally (donor-level accuracy is reported for this reason)
 - Neurons only — glial responses to tau are excluded
-- Post-mortem tissue; no correction for PMI / RIN
+- Post-mortem tissue; no correction for PMI / RIN (PMI is missing for one donor)
 - Single dataset; no external cohort
 
 ---
 
 ## References
+
+- Braak & Braak (1991) Neuropathological stageing of Alzheimer-related changes. *Acta Neuropathologica* 82:239–259
 
 - Cui et al. (2024) scGPT: toward building a foundation model for single-cell multi-omics using generative AI. *Nature Methods*
 - Morabito et al. (2021) Single-nucleus chromatin accessibility and transcriptomic characterization of Alzheimer's disease. *Nature Genetics*

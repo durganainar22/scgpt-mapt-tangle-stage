@@ -1,0 +1,413 @@
+{
+  "task": "Tangle stage classification (Stage 1/2/5/6), neurons, GSE174367",
+  "evaluation": "donor-level cross-validation (test donors never seen in training); mean \u00b1 SD across folds/seeds",
+  "n_scgpt_runs": 6,
+  "summary": {
+    "majority": {
+      "balanced_accuracy": {
+        "mean": 0.25,
+        "std": 0.0
+      },
+      "macro_f1": {
+        "mean": 0.17250340324440092,
+        "std": 0.044394199085877314
+      },
+      "macro_auc": {
+        "mean": 0.5,
+        "std": 0.0
+      },
+      "accuracy": {
+        "mean": 0.5448514021849367,
+        "std": 0.20090214084431385
+      },
+      "donor_accuracy": {
+        "mean": 0.4444444444444444,
+        "std": 0.09622504486493763
+      },
+      "recall_Stage 1": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "recall_Stage 2": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "recall_Stage 5": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "recall_Stage 6": {
+        "mean": 1.0,
+        "std": 0.0
+      }
+    },
+    "pca_logreg": {
+      "balanced_accuracy": {
+        "mean": 0.275151333855024,
+        "std": 0.083180025319421
+      },
+      "macro_f1": {
+        "mean": 0.23705377082695542,
+        "std": 0.04291302278447421
+      },
+      "macro_auc": {
+        "mean": 0.5144412313407462,
+        "std": 0.06982912437518222
+      },
+      "accuracy": {
+        "mean": 0.31560733940505065,
+        "std": 0.1127152049043716
+      },
+      "donor_accuracy": {
+        "mean": 0.2222222222222222,
+        "std": 0.2545875386086578
+      },
+      "recall_Stage 1": {
+        "mean": 0.24618322626067057,
+        "std": 0.09164330392165229
+      },
+      "recall_Stage 2": {
+        "mean": 0.2979067629658181,
+        "std": 0.1957926897502802
+      },
+      "recall_Stage 5": {
+        "mean": 0.176374284752404,
+        "std": 0.16523757450327994
+      },
+      "recall_Stage 6": {
+        "mean": 0.38014106144120335,
+        "std": 0.15767073190515174
+      }
+    },
+    "frozen_scgpt_probe": {
+      "balanced_accuracy": {
+        "mean": 0.2365309358543526,
+        "std": 0.025804873155347862
+      },
+      "macro_f1": {
+        "mean": 0.20130054818197649,
+        "std": 0.020250275596678316
+      },
+      "macro_auc": {
+        "mean": 0.48817413940511933,
+        "std": 0.028396919798068902
+      },
+      "accuracy": {
+        "mean": 0.275542655492981,
+        "std": 0.060297291883954024
+      },
+      "donor_accuracy": {
+        "mean": 0.19444444444444442,
+        "std": 0.12546210878484684
+      },
+      "recall_Stage 1": {
+        "mean": 0.2083744335584432,
+        "std": 0.08081556773791626
+      },
+      "recall_Stage 2": {
+        "mean": 0.15237015827567008,
+        "std": 0.09971727376389543
+      },
+      "recall_Stage 5": {
+        "mean": 0.22847511756522454,
+        "std": 0.14977868066629618
+      },
+      "recall_Stage 6": {
+        "mean": 0.3569040340180725,
+        "std": 0.05754992029249592
+      }
+    },
+    "finetuned_scgpt": {
+      "balanced_accuracy": {
+        "mean": 0.2488853663613255,
+        "std": 0.05601350457015335
+      },
+      "macro_f1": {
+        "mean": 0.1970824824447681,
+        "std": 0.03128272977275454
+      },
+      "macro_auc": {
+        "mean": 0.5015035280036242,
+        "std": 0.09235750645923434
+      },
+      "accuracy": {
+        "mean": 0.3014974070429937,
+        "std": 0.05089854254691866
+      },
+      "donor_accuracy": {
+        "mean": 0.38888888888888884,
+        "std": 0.13608276348795437
+      },
+      "recall_Stage 1": {
+        "mean": 0.1473115600484556,
+        "std": 0.11252863413378268
+      },
+      "recall_Stage 2": {
+        "mean": 0.2033654228536118,
+        "std": 0.22815709523949249
+      },
+      "recall_Stage 5": {
+        "mean": 0.16750319544563427,
+        "std": 0.21373083681628627
+      },
+      "recall_Stage 6": {
+        "mean": 0.47736128709760023,
+        "std": 0.1161790600073344
+      }
+    }
+  },
+  "per_run": [
+    {
+      "model": "majority",
+      "fold": 0,
+      "seed": null,
+      "balanced_accuracy": 0.25,
+      "macro_f1": 0.18383068439831332,
+      "macro_auc": 0.5,
+      "accuracy": 0.5814311361887663,
+      "donor_accuracy": 0.5,
+      "recall_Stage 1": 0.0,
+      "recall_Stage 2": 0.0,
+      "recall_Stage 5": 0.0,
+      "recall_Stage 6": 1.0
+    },
+    {
+      "model": "pca_logreg",
+      "fold": 0,
+      "seed": null,
+      "balanced_accuracy": 0.337929453623419,
+      "macro_f1": 0.25613159490576404,
+      "macro_auc": 0.5244092245008524,
+      "accuracy": 0.3613747114644781,
+      "donor_accuracy": 0.5,
+      "recall_Stage 1": 0.3,
+      "recall_Stage 2": 0.5208333333333334,
+      "recall_Stage 5": 0.020518358531317494,
+      "recall_Stage 6": 0.5103661226290251
+    },
+    {
+      "model": "majority",
+      "fold": 1,
+      "seed": null,
+      "balanced_accuracy": 0.25,
+      "macro_f1": 0.2101365805496133,
+      "macro_auc": 0.5,
+      "accuracy": 0.7249503264263412,
+      "donor_accuracy": 0.5,
+      "recall_Stage 1": 0.0,
+      "recall_Stage 2": 0.0,
+      "recall_Stage 5": 0.0,
+      "recall_Stage 6": 1.0
+    },
+    {
+      "model": "pca_logreg",
+      "fold": 1,
+      "seed": null,
+      "balanced_accuracy": 0.30671541027791066,
+      "macro_f1": 0.26711984579442083,
+      "macro_auc": 0.5787507116923257,
+      "accuracy": 0.3982401362475163,
+      "donor_accuracy": 0.16666666666666666,
+      "recall_Stage 1": 0.29818181818181816,
+      "recall_Stage 2": 0.15384615384615385,
+      "recall_Stage 5": 0.34961832061068704,
+      "recall_Stage 6": 0.42521534847298353
+    },
+    {
+      "model": "majority",
+      "fold": 2,
+      "seed": null,
+      "balanced_accuracy": 0.25,
+      "macro_f1": 0.12354294478527607,
+      "macro_auc": 0.5,
+      "accuracy": 0.3281727439397026,
+      "donor_accuracy": 0.3333333333333333,
+      "recall_Stage 1": 0.0,
+      "recall_Stage 2": 0.0,
+      "recall_Stage 5": 0.0,
+      "recall_Stage 6": 1.0
+    },
+    {
+      "model": "pca_logreg",
+      "fold": 2,
+      "seed": null,
+      "balanced_accuracy": 0.1808091376637424,
+      "macro_f1": 0.1879098717806813,
+      "macro_auc": 0.44016375782906014,
+      "accuracy": 0.18720717050315747,
+      "donor_accuracy": 0.0,
+      "recall_Stage 1": 0.1403678606001936,
+      "recall_Stage 2": 0.21904080171796708,
+      "recall_Stage 5": 0.15898617511520738,
+      "recall_Stage 6": 0.2048417132216015
+    },
+    {
+      "model": "frozen_scgpt_probe",
+      "fold": 0,
+      "seed": 42,
+      "balanced_accuracy": 0.2543170062479304,
+      "macro_f1": 0.20524143965302738,
+      "macro_auc": 0.48082339847984235,
+      "accuracy": 0.30905360348807387,
+      "donor_accuracy": 0.3333333333333333,
+      "recall_Stage 1": 0.2540983606557377,
+      "recall_Stage 2": 0.28125,
+      "recall_Stage 5": 0.05183585313174946,
+      "recall_Stage 6": 0.43008381120423467
+    },
+    {
+      "model": "finetuned_scgpt",
+      "fold": 0,
+      "seed": 42,
+      "balanced_accuracy": 0.17373563496745736,
+      "macro_f1": 0.15603277345664546,
+      "macro_auc": 0.3636007360500302,
+      "accuracy": 0.2885355219286997,
+      "donor_accuracy": 0.3333333333333333,
+      "recall_Stage 1": 0.06557377049180328,
+      "recall_Stage 2": 0.13541666666666666,
+      "recall_Stage 5": 0.035637149028077755,
+      "recall_Stage 6": 0.45831495368328184
+    },
+    {
+      "model": "frozen_scgpt_probe",
+      "fold": 0,
+      "seed": 7,
+      "balanced_accuracy": 0.23335433174837142,
+      "macro_f1": 0.19583114886712544,
+      "macro_auc": 0.46465967790676754,
+      "accuracy": 0.2985380866888946,
+      "donor_accuracy": 0.3333333333333333,
+      "recall_Stage 1": 0.2442622950819672,
+      "recall_Stage 2": 0.21875,
+      "recall_Stage 5": 0.05399568034557235,
+      "recall_Stage 6": 0.41640935156594616
+    },
+    {
+      "model": "finetuned_scgpt",
+      "fold": 0,
+      "seed": 7,
+      "balanced_accuracy": 0.18797678684331298,
+      "macro_f1": 0.16728737436748264,
+      "macro_auc": 0.40626745233685935,
+      "accuracy": 0.32726340087201844,
+      "donor_accuracy": 0.5,
+      "recall_Stage 1": 0.09016393442622951,
+      "recall_Stage 2": 0.11458333333333333,
+      "recall_Stage 5": 0.02267818574514039,
+      "recall_Stage 6": 0.5244816938685487
+    },
+    {
+      "model": "frozen_scgpt_probe",
+      "fold": 1,
+      "seed": 42,
+      "balanced_accuracy": 0.24883971097337945,
+      "macro_f1": 0.22106271356278914,
+      "macro_auc": 0.5198749741435245,
+      "accuracy": 0.3196139653704229,
+      "donor_accuracy": 0.16666666666666666,
+      "recall_Stage 1": 0.27636363636363637,
+      "recall_Stage 2": 0.1282051282051282,
+      "recall_Stage 5": 0.24427480916030533,
+      "recall_Stage 6": 0.34651527016444794
+    },
+    {
+      "model": "finetuned_scgpt",
+      "fold": 1,
+      "seed": 42,
+      "balanced_accuracy": 0.26970724501865595,
+      "macro_f1": 0.2144496836136427,
+      "macro_auc": 0.5752210538065041,
+      "accuracy": 0.3885892705080897,
+      "donor_accuracy": 0.5,
+      "recall_Stage 1": 0.16,
+      "recall_Stage 2": 0.358974358974359,
+      "recall_Stage 5": 0.06259541984732825,
+      "recall_Stage 6": 0.49725920125293654
+    },
+    {
+      "model": "frozen_scgpt_probe",
+      "fold": 1,
+      "seed": 7,
+      "balanced_accuracy": 0.26922904439187834,
+      "macro_f1": 0.22646956115768133,
+      "macro_auc": 0.5277895949661446,
+      "accuracy": 0.3284132841328413,
+      "donor_accuracy": 0.16666666666666666,
+      "recall_Stage 1": 0.26545454545454544,
+      "recall_Stage 2": 0.20512820512820512,
+      "recall_Stage 5": 0.24885496183206107,
+      "recall_Stage 6": 0.35747846515270165
+    },
+    {
+      "model": "finetuned_scgpt",
+      "fold": 1,
+      "seed": 7,
+      "balanced_accuracy": 0.3183653779095744,
+      "macro_f1": 0.19443532792865098,
+      "macro_auc": 0.5711408045868016,
+      "accuracy": 0.2429747374396821,
+      "donor_accuracy": 0.16666666666666666,
+      "recall_Stage 1": 0.36,
+      "recall_Stage 2": 0.5897435897435898,
+      "recall_Stage 5": 0.04885496183206107,
+      "recall_Stage 6": 0.2748629600626468
+    },
+    {
+      "model": "frozen_scgpt_probe",
+      "fold": 2,
+      "seed": 42,
+      "balanced_accuracy": 0.2050955789729172,
+      "macro_f1": 0.17518304627751183,
+      "macro_auc": 0.4639181190192899,
+      "accuracy": 0.19596659197392544,
+      "donor_accuracy": 0.16666666666666666,
+      "recall_Stage 1": 0.10067763794772508,
+      "recall_Stage 2": 0.02863278453829635,
+      "recall_Stage 5": 0.39746543778801846,
+      "recall_Stage 6": 0.2936064556176288
+    },
+    {
+      "model": "finetuned_scgpt",
+      "fold": 2,
+      "seed": 42,
+      "balanced_accuracy": 0.26841853335235405,
+      "macro_f1": 0.23991979246343187,
+      "macro_auc": 0.5575365160200373,
+      "accuracy": 0.29211652067630883,
+      "donor_accuracy": 0.3333333333333333,
+      "recall_Stage 1": 0.15004840271055178,
+      "recall_Stage 2": 0.0164638511095204,
+      "recall_Stage 5": 0.2764976958525346,
+      "recall_Stage 6": 0.6306641837368094
+    },
+    {
+      "model": "frozen_scgpt_probe",
+      "fold": 2,
+      "seed": 7,
+      "balanced_accuracy": 0.20834994279163876,
+      "macro_f1": 0.1840153795737237,
+      "macro_auc": 0.471979071915147,
+      "accuracy": 0.20167040130372785,
+      "donor_accuracy": 0.0,
+      "recall_Stage 1": 0.10939012584704744,
+      "recall_Stage 2": 0.052254831782390834,
+      "recall_Stage 5": 0.37442396313364057,
+      "recall_Stage 6": 0.2973308504034761
+    },
+    {
+      "model": "finetuned_scgpt",
+      "fold": 2,
+      "seed": 7,
+      "balanced_accuracy": 0.27510862007659814,
+      "macro_f1": 0.21036994283875488,
+      "macro_auc": 0.5352546052215127,
+      "accuracy": 0.2695049908331636,
+      "donor_accuracy": 0.5,
+      "recall_Stage 1": 0.05808325266214908,
+      "recall_Stage 2": 0.005010737294201861,
+      "recall_Stage 5": 0.5587557603686636,
+      "recall_Stage 6": 0.478584729981378
+    }
+  ]
+}
