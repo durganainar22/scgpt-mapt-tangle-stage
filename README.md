@@ -6,7 +6,7 @@ This project fine-tunes scGPT, a transformer-based single-cell foundation model 
 
 Neurofibrillary tangles of hyperphosphorylated MAPT (tau) are a defining pathology of Alzheimer's disease. The question: **can a foundation model recognise a donor's tangle stage from the transcriptional state of individual neurons, in donors it has never seen?**
 
-> **Status:** v2 pipeline (this branch) fixes several methodological and implementation problems found in v1 (see [Changes from v1](#changes-from-v1)). v1's reported numbers (48% accuracy, AUC 0.68) came from a cell-level split and broken model inputs and should not be used. Updated results: see `results_summary.json` / `results/summary.md` after re-running.
+> **Key result (v2):** evaluated on **held-out donors**, neither fine-tuned scGPT nor any baseline predicts tangle stage better than chance (fine-tuned scGPT balanced accuracy 0.249 ± 0.056, macro AUC 0.502 ± 0.092; chance = 0.25 / 0.50). v1's reported 48% accuracy / AUC 0.68 came from a cell-level split (cells of the same donor in train and test) plus broken model inputs, and is withdrawn. See [Results](#results) and [Changes from v1](#changes-from-v1).
 
 ---
 
@@ -63,6 +63,27 @@ Morabito et al. 2021, *Nature Genetics* 53:1143–1155 — GEO **GSE174367**
 - Trainable: last 2 transformer layers + classification head
 - Class imbalance: `WeightedRandomSampler` only; plain cross-entropy
 - AdamW (lr 1e-4, weight decay 0.01), gradient clipping 1.0, LR halved on plateau, early stopping (patience 3) and checkpoint selection on **validation macro-F1**
+
+---
+
+## Results
+
+18 donors (Stage 1: 3, Stage 2: 4, Stage 5: 3, Stage 6: 8) → 3 donor-level folds. scGPT: 3 folds × 2 seeds; baselines: 3 folds. Mean ± SD across runs (`results/summary.md`, `results_summary.json`).
+
+| Model | Balanced accuracy | Macro-F1 | Macro AUC | Accuracy | Donor-level accuracy |
+|---|---|---|---|---|---|
+| Majority class | 0.250 ± 0.000 | 0.173 ± 0.044 | 0.500 ± 0.000 | 0.545 ± 0.201 | 0.444 ± 0.096 |
+| PCA (50) + logistic regression | 0.275 ± 0.083 | 0.237 ± 0.043 | 0.514 ± 0.070 | 0.316 ± 0.113 | 0.222 ± 0.255 |
+| Frozen scGPT embedding + LR | 0.237 ± 0.026 | 0.201 ± 0.020 | 0.488 ± 0.028 | 0.276 ± 0.060 | 0.194 ± 0.125 |
+| **Fine-tuned scGPT** | **0.249 ± 0.056** | **0.197 ± 0.031** | **0.502 ± 0.092** | 0.301 ± 0.051 | 0.389 ± 0.136 |
+
+Chance: balanced accuracy 0.25, AUC 0.50. Accuracy is inflated by the Stage 6 majority and is shown for reference only.
+
+**Interpretation**
+- In unseen donors, tangle stage is **not predictable** from neuronal transcriptomes in this dataset — not by fine-tuned scGPT, pretrained scGPT embeddings, or a linear model on PCA features. Fine-tuned scGPT is not better than always predicting the most common stage, even at the donor level.
+- Fine-tuning fits training donors quickly while loss on new (validation) donors stays much higher (e.g. fold 0, epoch 1: train 0.90 vs validation 3.31) — the expected signature of learning donor-specific features rather than a transferable pathology signal. Per-epoch curves are in the executed notebooks (`executed/`).
+- The v1 result was therefore an artefact of donor leakage (and inputs that did not match scGPT's pretraining). This is the main lesson of the project: with donor-level labels, the unit of generalisation is the donor, and the effective sample size here is 18.
+- A negative result at n = 18 donors does not show that no stage signal exists — only that it is not detectable/transferable at this sample size, with neurons only and 3 of 4 stages represented by 3–4 donors. Larger cohorts (e.g. SEA-AD, ROSMAP snRNA-seq), pseudobulk donor-level models, and ordinal or continuous pathology targets are the natural next steps.
 
 ---
 
