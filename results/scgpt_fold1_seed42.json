@@ -1,0 +1,271 @@
+{
+  "run": "fold1_seed42",
+  "fold": 1,
+  "seed": 42,
+  "n_splits": 3,
+  "config": {
+    "max_len": 513,
+    "n_epochs_max": 15,
+    "epochs_trained": 5,
+    "batch_size": 32,
+    "lr": 0.0001,
+    "unfrozen_layers": 2,
+    "imbalance": "WeightedRandomSampler only",
+    "model_selection": "val macro-F1",
+    "tokenization": "scgpt Preprocessor(binning) + tokenize_and_pad_batch(append_cls=True)"
+  },
+  "split": {
+    "train_donors": [
+      "Sample-17",
+      "Sample-22",
+      "Sample-33",
+      "Sample-37",
+      "Sample-58",
+      "Sample-82"
+    ],
+    "val_donors": [
+      "Sample-100",
+      "Sample-27",
+      "Sample-47",
+      "Sample-50",
+      "Sample-66",
+      "Sample-96"
+    ],
+    "test_donors": [
+      "Sample-19",
+      "Sample-43",
+      "Sample-45",
+      "Sample-46",
+      "Sample-52",
+      "Sample-90"
+    ],
+    "n_train_cells": 3899,
+    "n_val_cells": 4909,
+    "n_test_cells": 3523
+  },
+  "majority": {
+    "n_cells": 3523,
+    "accuracy": 0.7249503264263412,
+    "balanced_accuracy": 0.25,
+    "macro_f1": 0.2101365805496133,
+    "per_class_recall": {
+      "Stage 1": 0.0,
+      "Stage 2": 0.0,
+      "Stage 5": 0.0,
+      "Stage 6": 1.0
+    },
+    "confusion_matrix": [
+      [
+        0,
+        0,
+        0,
+        275
+      ],
+      [
+        0,
+        0,
+        0,
+        39
+      ],
+      [
+        0,
+        0,
+        0,
+        655
+      ],
+      [
+        0,
+        0,
+        0,
+        2554
+      ]
+    ],
+    "per_class_auc": {
+      "Stage 1": 0.5,
+      "Stage 2": 0.5,
+      "Stage 5": 0.5,
+      "Stage 6": 0.5
+    },
+    "macro_auc": 0.5,
+    "donor_level": {
+      "n_donors": 6,
+      "accuracy": 0.5,
+      "true": [
+        3,
+        3,
+        3,
+        2,
+        1,
+        0
+      ],
+      "pred": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    }
+  },
+  "frozen_scgpt_probe": {
+    "n_cells": 3523,
+    "accuracy": 0.3196139653704229,
+    "balanced_accuracy": 0.24883971097337945,
+    "macro_f1": 0.22106271356278914,
+    "per_class_recall": {
+      "Stage 1": 0.27636363636363637,
+      "Stage 2": 0.1282051282051282,
+      "Stage 5": 0.24427480916030533,
+      "Stage 6": 0.34651527016444794
+    },
+    "confusion_matrix": [
+      [
+        76,
+        35,
+        38,
+        126
+      ],
+      [
+        8,
+        5,
+        15,
+        11
+      ],
+      [
+        184,
+        161,
+        160,
+        150
+      ],
+      [
+        693,
+        682,
+        294,
+        885
+      ]
+    ],
+    "per_class_auc": {
+      "Stage 1": 0.5042678011643529,
+      "Stage 2": 0.3846080249639377,
+      "Stage 5": 0.6586024252877234,
+      "Stage 6": 0.5320216451580838
+    },
+    "macro_auc": 0.5198749741435245,
+    "donor_level": {
+      "n_donors": 6,
+      "accuracy": 0.16666666666666666,
+      "true": [
+        3,
+        3,
+        3,
+        2,
+        1,
+        0
+      ],
+      "pred": [
+        3,
+        1,
+        1,
+        0,
+        3,
+        3
+      ]
+    }
+  },
+  "finetuned_scgpt": {
+    "n_cells": 3523,
+    "accuracy": 0.3885892705080897,
+    "balanced_accuracy": 0.26970724501865595,
+    "macro_f1": 0.2144496836136427,
+    "per_class_recall": {
+      "Stage 1": 0.16,
+      "Stage 2": 0.358974358974359,
+      "Stage 5": 0.06259541984732825,
+      "Stage 6": 0.49725920125293654
+    },
+    "confusion_matrix": [
+      [
+        44,
+        27,
+        139,
+        65
+      ],
+      [
+        7,
+        14,
+        5,
+        13
+      ],
+      [
+        16,
+        223,
+        41,
+        375
+      ],
+      [
+        168,
+        589,
+        527,
+        1270
+      ]
+    ],
+    "per_class_auc": {
+      "Stage 1": 0.7628179579041648,
+      "Stage 2": 0.6243633901498427,
+      "Stage 5": 0.39908971861126197,
+      "Stage 6": 0.5146131485607472
+    },
+    "macro_auc": 0.5752210538065041,
+    "donor_level": {
+      "n_donors": 6,
+      "accuracy": 0.5,
+      "true": [
+        3,
+        3,
+        3,
+        2,
+        1,
+        0
+      ],
+      "pred": [
+        2,
+        3,
+        3,
+        3,
+        1,
+        2
+      ]
+    }
+  },
+  "history": {
+    "train_loss": [
+      0.8841699415543041,
+      0.6545972753255094,
+      0.5846683588184294,
+      0.5274677882429029,
+      0.49906136584086497
+    ],
+    "val_loss": [
+      2.7846689224243164,
+      3.3251020908355713,
+      3.6312806606292725,
+      3.9045538902282715,
+      4.1410980224609375
+    ],
+    "val_macro_f1": [
+      0.14738584817226005,
+      0.15851026974872992,
+      0.12521768704592529,
+      0.14854747880225816,
+      0.12938886300188582
+    ],
+    "val_bal_acc": [
+      0.14809792283567297,
+      0.1643308268064388,
+      0.13151011213062122,
+      0.14775252949040957,
+      0.12565610585392994
+    ]
+  }
+}
