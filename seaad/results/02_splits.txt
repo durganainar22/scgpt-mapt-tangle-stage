@@ -1,0 +1,46 @@
+Donors: 84  test: 17  dev: 67 in 5 folds  (seed 42)
+
+=== Donors per split x target (0 = Braak 0-IV, 1 = Braak V-VI) ===
+label   0   1  All
+split             
+fold0   5   9   14
+fold1   6   8   14
+fold2   6   7   13
+fold3   6   7   13
+fold4   5   8   13
+test    7  10   17
+All    35  49   84
+
+=== Donors per split x dementia ===
+dementia   0   1  All
+split                
+fold0      6   8   14
+fold1      7   7   14
+fold2      7   6   13
+fold3      7   6   13
+fold4      7   6   13
+test       8   9   17
+All       42  42   84
+
+=== Donors per split x Braak stage ===
+Braak  Braak 0  Braak II  Braak III  Braak IV  Braak V  Braak VI
+split                                                           
+fold0        1         1          0         3        6         3
+fold1        1         1          0         4        6         2
+fold2        0         1          1         4        5         2
+fold3        0         1          1         4        5         2
+fold4        0         0          2         3        5         3
+test         0         0          2         5        7         3
+
+=== Neurons per split ===
+          sum   min   median
+split                       
+fold0  147172   219  11655.5
+fold1  155466  4196  10618.5
+fold2  157293  3676  13653.0
+fold3  145278  3451  11740.0
+fold4  138800  4132  10641.0
+test   207260   770  11683.0
+
+Locked test donors: ['H20.33.005', 'H20.33.016', 'H20.33.024', 'H20.33.034', 'H20.33.038', 'H20.33.039', 'H20.33.041', 'H21.33.006', 'H21.33.009', 'H21.33.010', 'H21.33.013', 'H21.33.021', 'H21.33.026', 'H21.33.027', 'H21.33.030', 'H21.33.041', 'H21.33.045']
+SHA-256 of test donor list: 8ec62ff9ba8d5afc7c975fdfe7b654e18c60fc290528951184945176c0a58a02

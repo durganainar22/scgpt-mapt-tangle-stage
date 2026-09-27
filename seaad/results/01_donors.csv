@@ -1,0 +1,85 @@
+Donor ID,Neurotypical reference,Sex,Age at Death,PMI,RIN,Braak,Thal,CERAD score,Overall AD neuropathological Change,Cognitive Status,APOE Genotype,Severely Affected Donor,n_cells,n_neurons,n_neurons_used,methods,n_library_preps,braak_group
+H19.33.004,False,Female,80.0,8.1333333333333,8.33,Braak IV,Thal 0,Absent,Not AD,No dementia,3/3,N,27431,22513,22513,10Xv3.1,4,III-IV
+H20.33.001,False,Male,82.0,7.7,8.6,Braak IV,Thal 2,Sparse,Low,No dementia,3/3,N,19297,16057,16057,10Xv3.1|10xMulti,3,III-IV
+H20.33.002,False,Female,97.0,4.333333333333333,7.87,Braak IV,Thal 0,Absent,Not AD,No dementia,2/3,N,20040,16893,16893,10Xv3.1|10xMulti,3,III-IV
+H20.33.004,False,Male,86.0,8.833333333333334,7.83,Braak V,Thal 5,Frequent,High,Dementia,3/4,N,20411,17442,17442,10Xv3.1|10xMulti,3,V-VI
+H20.33.005,False,Female,99.0,7.6,8.4,Braak IV,Thal 3,Moderate,Intermediate,No dementia,2/3,N,25872,21887,21887,10Xv3.1|10xMulti,5,III-IV
+H20.33.008,False,Female,92.0,7.0,8.68,Braak V,Thal 4,Moderate,High,No dementia,3/4,N,9099,7883,7883,10Xv3.1|10xMulti,2,V-VI
+H20.33.011,False,Female,93.0,6.0,9.07,Braak V,Thal 5,Moderate,High,Dementia,3/4,N,16935,13297,13297,10Xv3.1|10xMulti,3,V-VI
+H20.33.012,False,Female,91.0,7.716666666666667,8.75,Braak III,Thal 1,Absent,Low,No dementia,3/3,N,16719,14338,14338,10Xv3.1|10xMulti,3,III-IV
+H20.33.013,False,Male,94.0,4.5,9.08,Braak IV,Thal 3,Moderate,Intermediate,No dementia,3/3,N,18261,15073,15073,10Xv3.1|10xMulti,3,III-IV
+H20.33.014,False,Female,82.0,7.4,8.67,Braak IV,Thal 3,Sparse,Intermediate,No dementia,3/3,N,21138,18097,18097,10Xv3.1|10xMulti,3,III-IV
+H20.33.015,False,Male,88.0,11.416666666667,8.57,Braak V,Thal 3,Moderate,Intermediate,Dementia,3/3,N,16206,14276,14276,10Xv3.1|10xMulti,3,V-VI
+H20.33.016,False,Female,93.0,7.7333333333333,8.82,Braak IV,Thal 4,Moderate,Intermediate,Dementia,2/3,N,17704,14818,14818,10Xv3.1|10xMulti,3,III-IV
+H20.33.017,False,Male,69.0,5.5,8.82,Braak VI,Thal 4,Frequent,High,Dementia,3/3,N,14694,12149,12149,10Xv3.1|10xMulti,3,V-VI
+H20.33.018,False,Female,81.0,4.5,9.55,Braak VI,Thal 5,Frequent,High,Dementia,3/4,N,20813,16024,16024,10Xv3.1|10xMulti,5,V-VI
+H20.33.019,False,Female,87.0,11.1,8.65,Braak III,Thal 4,Sparse,Intermediate,No dementia,3/4,N,17877,15022,15022,10Xv3.1|10xMulti,3,III-IV
+H20.33.020,False,Male,81.0,6.633333333333334,8.98,Braak VI,Thal 5,Frequent,High,Dementia,4/4,N,17043,13313,13313,10Xv3.1|10xMulti,4,V-VI
+H20.33.024,False,Male,90.0,3.5,9.5,Braak V,Thal 4,Sparse,Intermediate,No dementia,3/3,N,14940,12153,12153,10Xv3.1,2,V-VI
+H20.33.025,False,Male,94.0,4.5,9.43,Braak V,Thal 4,Moderate,High,No dementia,3/3,N,23681,19560,19560,10Xv3.1|10xMulti,3,V-VI
+H20.33.026,False,Female,75.0,7.0,9.53,Braak VI,Thal 4,Frequent,High,Dementia,4/4,N,6455,5148,5148,10Xv3.1,1,V-VI
+H20.33.027,False,Female,99.0,9.233333333333333,8.87,Braak IV,Thal 3,Moderate,Intermediate,No dementia,3/3,N,19087,16377,16377,10Xv3.1|10xMulti,3,III-IV
+H20.33.028,False,Female,94.0,7.4,7.9,Braak V,Thal 4,Moderate,High,Dementia,3/3,Y,7804,4196,4196,10Xv3.1|10xMulti,4,V-VI
+H20.33.029,False,Female,91.0,6.1,9.43,Braak V,Thal 4,Moderate,High,Dementia,3/3,N,10993,9098,9098,10Xv3.1,2,V-VI
+H20.33.030,False,Female,86.0,6.0,8.65,Braak V,Thal 4,Frequent,High,No dementia,3/4,N,22572,18240,18240,10Xv3.1,3,V-VI
+H20.33.031,False,Female,87.0,7.916666666666667,8.85,Braak VI,Thal 4,Frequent,High,Dementia,3/3,N,12423,10109,10109,10Xv3.1,2,V-VI
+H20.33.032,False,Male,98.0,6.9166666666667,9.45,Braak V,Thal 5,Moderate,High,No dementia,3/3,N,13634,10641,10641,10Xv3.1,2,V-VI
+H20.33.033,False,Male,68.0,6.5,7.93,Braak VI,Thal 5,Frequent,High,Dementia,3/3,Y,4225,3451,3451,10Xv3.1,3,V-VI
+H20.33.034,False,Female,85.0,10.016666666667,8.98,Braak IV,Thal 3,Absent,Intermediate,No dementia,2/2,N,16532,13032,13032,10Xv3.1,2,III-IV
+H20.33.035,False,Female,99.0,4.6,9.04,Braak IV,Thal 0,Absent,Not AD,No dementia,3/3,N,8091,6518,6518,10Xv3.1,2,III-IV
+H20.33.036,False,Female,100.0,10.6,8.63,Braak V,Thal 5,Moderate,High,No dementia,2/3,N,5202,4132,4132,10Xv3.1,3,V-VI
+H20.33.037,False,Female,96.0,10.0,8.63,Braak V,Thal 5,Frequent,High,Dementia,3/3,Y,4823,3839,3839,10Xv3.1,3,V-VI
+H20.33.038,False,Female,90.0,6.2,6.3,Braak V,Thal 4,Frequent,High,Dementia,3/3,Y,2918,770,770,10Xv3.1|10xMulti,2,V-VI
+H20.33.039,False,Female,96.0,10.3,9.48,Braak V,Thal 4,Frequent,High,No dementia,3/3,N,24452,21129,21129,10Xv3.1|10xMulti,3,V-VI
+H20.33.040,False,Male,98.0,5.03,9.17,Braak IV,Thal 4,Frequent,Intermediate,Dementia,3/3,N,11824,9105,9105,10Xv3.1|10xMulti,3,III-IV
+H20.33.041,False,Female,91.0,5.916666666666667,8.43,Braak V,Thal 4,Moderate,High,Dementia,3/3,N,14176,11683,11683,10Xv3.1,2,V-VI
+H20.33.043,False,Male,85.0,4.5,9.37,Braak IV,Thal 4,Sparse,Intermediate,No dementia,4/4,N,24831,18885,18885,10Xv3.1|10xMulti,3,III-IV
+H20.33.044,False,Male,81.0,4.7,9.2,Braak V,Thal 0,Absent,Not AD,No dementia,2/3,N,14691,11740,11740,10Xv3.1|10xMulti,3,V-VI
+H20.33.045,False,Female,77.0,3.3,8.15,Braak VI,Thal 5,Frequent,High,Dementia,4/4,N,7520,6202,6202,10Xv3.1,2,V-VI
+H20.33.046,False,Male,94.0,8.0,5.67,Braak VI,Thal 5,Frequent,High,Dementia,3/3,Y,11521,9374,9374,10Xv3.1,2,V-VI
+H21.33.001,False,Male,80.0,9.6,8.1,Braak III,Thal 2,Absent,Low,Dementia,2/3,N,14332,12298,12298,10Xv3.1|10xMulti,3,III-IV
+H21.33.002,False,Female,70.0,3.2,9.18,Braak VI,Thal 5,Frequent,High,Dementia,3/4,N,15267,13049,13049,10Xv3.1,2,V-VI
+H21.33.003,False,Male,78.0,10.0,9.6,Braak 0,Thal 0,Absent,Not AD,No dementia,3/3,N,18913,15618,15618,10Xv3.1|10xMulti,3,0-II
+H21.33.004,False,Male,93.0,5.0,9.17,Braak II,Thal 0,Absent,Not AD,No dementia,2/3,N,15157,12348,12348,10Xv3.1,2,0-II
+H21.33.005,False,Male,95.0,10.2,7.43,Braak V,Thal 3,Moderate,Intermediate,Dementia,3/3,N,14930,11977,11977,10Xv3.1,3,V-VI
+H21.33.006,False,Male,97.0,9.8,8.63,Braak IV,Thal 4,Sparse,Intermediate,No dementia,3/4,N,21774,17579,17579,10Xv3.1|10xMulti,3,III-IV
+H21.33.007,False,Female,86.0,5.6,8.33,Braak V,Thal 4,Frequent,High,Dementia,3/3,N,16326,13080,13080,10Xv3.1,2,V-VI
+H21.33.008,False,Female,91.0,5.0,5.93,Braak V,Thal 4,Frequent,High,Dementia,3/3,N,17688,14305,14305,10Xv3.1|10xMulti,3,V-VI
+H21.33.009,False,Female,65.0,6.2,6.9,Braak VI,Thal 5,Frequent,High,Dementia,4/4,Y,10455,8393,8393,10Xv3.1,2,V-VI
+H21.33.010,False,Female,93.0,9.6,7.52,Braak VI,Thal 5,Frequent,High,Dementia,3/3,N,16895,13355,13355,10Xv3.1,3,V-VI
+H21.33.011,False,Female,83.0,3.6,9.3,Braak IV,Thal 0,Absent,Not AD,No dementia,3/3,N,18685,15354,15354,10Xv3.1,2,III-IV
+H21.33.012,False,Female,93.0,5.0,8.58,Braak IV,Thal 3,Sparse,Intermediate,Dementia,2/4,N,15974,12022,12022,10Xv3.1,2,III-IV
+H21.33.013,False,Female,94.0,7.3,9.07,Braak V,Thal 4,Moderate,High,Dementia,3/4,N,11712,9371,9371,10Xv3.1,2,V-VI
+H21.33.014,False,Male,92.0,9.5,9.57,Braak IV,Thal 4,Sparse,Intermediate,No dementia,2/3,N,13541,11753,11753,10Xv3.1,2,III-IV
+H21.33.015,False,Male,98.0,4.1,8.83,Braak IV,Thal 2,Sparse,Low,No dementia,3/3,N,17327,13653,13653,10Xv3.1,2,III-IV
+H21.33.016,False,Female,94.0,5.5,7.2,Braak IV,Thal 1,Absent,Low,Dementia,3/3,N,11659,8845,8845,10Xv3.1,1,III-IV
+H21.33.017,False,Female,92.0,3.5,6.97,Braak V,Thal 5,Frequent,High,Dementia,3/3,N,7173,5423,5423,10Xv3.1,2,V-VI
+H21.33.018,False,Female,89.0,10.233333333333333,9.27,Braak II,Thal 3,Frequent,Low,Dementia,3/3,N,13365,10431,10431,10Xv3.1,2,0-II
+H21.33.019,False,Male,75.0,10.016666666666667,9.43,Braak 0,Thal 1,Sparse,Low,No dementia,2/3,N,23533,19464,19464,10Xv3.1|10xMulti,3,0-II
+H21.33.020,False,Male,82.0,10.8,3.43,Braak V,Thal 4,Frequent,High,Dementia,3/3,Y,1409,219,219,10Xv3.1,2,V-VI
+H21.33.021,False,Male,99.0,6.9,9.37,Braak III,Thal 4,Moderate,Intermediate,Dementia,3/3,N,11524,10268,10268,10Xv3.1,2,III-IV
+H21.33.022,False,Female,82.0,4.833333333333333,8.0,Braak VI,Thal 2,Moderate,Intermediate,No dementia,3/3,N,19295,14542,14542,10Xv3.1,2,V-VI
+H21.33.023,False,Male,102.0,7.833333333333333,9.28,Braak IV,Thal 0,Absent,Not AD,No dementia,3/3,N,15422,12586,12586,10Xv3.1,2,III-IV
+H21.33.025,False,Female,88.0,8.6,8.92,Braak IV,Thal 3,Moderate,Intermediate,No dementia,3/3,N,12715,9710,9710,10Xv3.1,2,III-IV
+H21.33.026,False,Female,90.0,4.1,8.67,Braak V,Thal 4,Frequent,High,No dementia,3/4,N,10563,8807,8807,10Xv3.1,2,V-VI
+H21.33.027,False,Male,92.0,6.3,7.93,Braak V,Thal 5,Moderate,High,Dementia,3/4,N,26143,19752,19752,10Xv3.1,3,V-VI
+H21.33.028,False,Male,72.0,8.3,6.73,Braak II,Thal 1,Absent,Low,No dementia,3/3,N,12523,9247,9247,10Xv3.1,2,0-II
+H21.33.029,False,Male,89.0,11.033333333333331,7.2,Braak V,Thal 5,Frequent,High,Dementia,2/4,N,8364,6757,6757,10Xv3.1,2,V-VI
+H21.33.030,False,Male,89.0,5.5,8.67,Braak III,Thal 3,Moderate,Intermediate,No dementia,3/4,N,10543,9022,9022,10Xv3.1,2,III-IV
+H21.33.031,False,Male,84.0,8.9,8.43,Braak V,Thal 5,Moderate,High,Dementia,3/4,N,14705,12785,12785,10Xv3.1,2,V-VI
+H21.33.032,False,Female,98.0,5.0,8.03,Braak IV,Thal 2,Sparse,Low,No dementia,3/3,N,15451,12631,12631,10Xv3.1,2,III-IV
+H21.33.033,False,Female,83.0,8.2,5.6,Braak V,Thal 5,Moderate,High,No dementia,3/4,Y,5536,3676,3676,10Xv3.1,2,V-VI
+H21.33.034,False,Female,90.0,10.8,2.9,Braak VI,Thal 5,Frequent,High,Dementia,3/4,Y,2669,1189,1189,10Xv3.1,2,V-VI
+H21.33.035,False,Female,97.0,4.8,8.27,Braak V,Thal 5,Moderate,High,No dementia,3/3,N,13501,10806,10806,10Xv3.1,2,V-VI
+H21.33.036,False,Female,93.0,4.0,7.03,Braak V,Thal 4,Frequent,High,No dementia,3/3,N,11096,8736,8736,10Xv3.1,2,V-VI
+H21.33.037,False,Female,88.0,6.5,6.67,Braak IV,Thal 2,Absent,Low,No dementia,2/3,N,9033,7244,7244,10Xv3.1,2,III-IV
+H21.33.038,False,Female,84.0,11.0,7.27,Braak III,Thal 1,Absent,Low,No dementia,3/3,N,6888,5366,5366,10Xv3.1,1,III-IV
+H21.33.039,False,Female,88.0,6.5,7.2,Braak V,Thal 4,Moderate,High,Dementia,3/3,Y,7867,6273,6273,10Xv3.1,2,V-VI
+H21.33.040,False,Male,83.0,5.6,7.37,Braak V,Thal 4,Frequent,High,No dementia,3/4,N,15059,11763,11763,10Xv3.1,2,V-VI
+H21.33.041,False,Female,98.0,7.5,7.57,Braak IV,Thal 0,Absent,Not AD,No dementia,2/3,N,13824,10842,10842,10Xv3.1,2,III-IV
+H21.33.042,False,Female,91.0,8.1,6.23,Braak V,Thal 5,Moderate,High,Dementia,4/4,N,13945,10541,10541,10Xv3.1,2,V-VI
+H21.33.043,False,Female,95.0,4.4,7.27,Braak II,Thal 4,Sparse,Low,Dementia,3/3,N,14412,11548,11548,10Xv3.1,2,0-II
+H21.33.044,False,Female,88.0,7.0,8.63,Braak VI,Thal 3,Frequent,Intermediate,Dementia,3/3,N,5209,3916,3916,10Xv3.1,2,V-VI
+H21.33.045,False,Female,94.0,4.0,6.55,Braak VI,Thal 4,Frequent,High,Dementia,3/4,Y,5647,4399,4399,10Xv3.1,2,V-VI
+H21.33.046,False,Male,97.0,7.0,7.28,Braak V,Thal 4,Moderate,High,Dementia,3/3,N,5447,4501,4501,10Xv3.1,1,V-VI
+H21.33.047,False,Male,90.0,4.4,8.7,Braak V,Thal 2,Frequent,Intermediate,No dementia,3/3,N,13263,11361,11361,10Xv3.1,2,V-VI

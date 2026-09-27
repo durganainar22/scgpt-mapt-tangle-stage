@@ -1,0 +1,131 @@
+Cells in metadata: 1,178,694
+
+=== Used in analysis ===
+Used in analysis
+True    1178694
+
+=== Class ===
+Class
+Neuronal: Glutamatergic        647339
+Neuronal: GABAergic            303930
+Non-neuronal and Non-neural    227425
+
+Donors: 84  (neurotypical reference: 0)
+
+=== Donors per Braak stage ===
+Braak
+Braak 0       2
+Braak II      4
+Braak III     6
+Braak IV     23
+Braak V      34
+Braak VI     15
+
+=== Donors per 3-group target ===
+braak_group
+0-II       6
+III-IV    29
+V-VI      49
+
+=== Braak group x Neurotypical reference ===
+Neurotypical reference  False
+braak_group                  
+0-II                        6
+III-IV                     29
+V-VI                       49
+
+=== Braak group x Cognitive Status (donors) ===
+Cognitive Status  Dementia  No dementia
+braak_group                            
+0-II                     2            4
+III-IV                   6           23
+V-VI                    34           15
+
+=== Braak group x Overall AD neuropathological Change (donors) ===
+Overall AD neuropathological Change  High  Intermediate  Low  Not AD
+braak_group                                                         
+0-II                                    0             0    4       2
+III-IV                                  0            15    8       6
+V-VI                                   42             6    0       1
+
+=== Braak group x Sex (donors) ===
+Sex          Female  Male
+braak_group              
+0-II              2     4
+III-IV           18    11
+V-VI             31    18
+
+=== Braak group x APOE Genotype (donors) ===
+APOE Genotype  2/2  2/3  2/4  3/3  3/4  4/4
+braak_group                                
+0-II             0    2    0    4    0    0
+III-IV           1    7    1   16    3    1
+V-VI             0    2    1   27   14    5
+
+=== Braak group x Thal (donors) ===
+Thal         Thal 0  Thal 1  Thal 2  Thal 3  Thal 4  Thal 5
+braak_group                                                
+0-II              2       2       0       1       1       0
+III-IV            6       3       5       8       7       0
+V-VI              1       0       2       3      22      21
+
+=== Braak group x CERAD score (donors) ===
+CERAD score  Absent  Frequent  Moderate  Sparse
+braak_group                                    
+0-II              3         1         0       2
+III-IV           12         1         7       9
+V-VI              1        28        19       1
+
+=== Braak group x Severely Affected Donor (donors) ===
+Severely Affected Donor   N   Y
+braak_group                    
+0-II                      6   0
+III-IV                   29   0
+V-VI                     38  11
+
+=== Braak group x methods (donors) ===
+methods      10Xv3.1  10Xv3.1|10xMulti
+braak_group                           
+0-II               4                 2
+III-IV            16                13
+V-VI              36                13
+
+=== Numeric covariates by Braak group (median [min-max]) ===
+                  Age at Death             PMI            RIN            n_neurons_used n_library_preps
+braak_group                                                                                            
+0-II          83.5 [72.0-95.0]  9.2 [4.4-10.2]  9.2 [6.7-9.6]  11948.0 [9247.0-19464.0]   2.0 [2.0-3.0]
+III-IV       93.0 [80.0-102.0]  7.5 [3.6-11.1]  8.7 [6.7-9.6]  13032.0 [5366.0-22513.0]   2.0 [1.0-5.0]
+V-VI         90.0 [65.0-100.0]  6.5 [3.2-11.4]  8.3 [2.9-9.6]   10541.0 [219.0-21129.0]   2.0 [1.0-5.0]
+
+=== Neurons (used in analysis) per donor ===
+count       84.0
+mean     11325.0
+std       5001.0
+min        219.0
+25%       8650.0
+50%      11746.0
+75%      14389.0
+max      22513.0
+
+=== Neuron subclasses (used in analysis) ===
+Subclass
+L2/3 IT       289940
+L4 IT         147987
+L5 IT         105259
+Vip            89661
+Pvalb          78746
+Sst            44695
+L6 IT          37902
+Lamp5          36966
+L6 IT Car3     20690
+Lamp5 Lhx6     18490
+L5/6 NP        17365
+Sncg           17296
+L6 CT          14094
+L6b            12289
+Chandelier      9464
+Pax6            7713
+L5 ET           1813
+Sst Chodl        899
+
+Saved seaad/results/01_donors.csv and seaad/results/01_audit.txt
